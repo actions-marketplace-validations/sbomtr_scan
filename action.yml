@@ -1,5 +1,8 @@
-name: "Generate SBOM and upload to sbom.com.tr"
-description: "sbom.com.tr sbom"
+name: "Share Your SBOM"
+branding:
+  icon: 'package'
+  color: 'blue'
+description: "Seamlessly integrate into your CI/CD workflows, generating and sharing Software Bills of Materials (SBOMs) effortlessly"
 inputs:
   scanner_name:
     description: 'Scanner Name'
@@ -71,7 +74,6 @@ runs:
         scanner_name: ${{ inputs.scanner_name }}
         TARGET: ${{ inputs.target }}
         GITHUB_WORKSPACE: ${{ github.workspace }}
-
     - name: Output SBOM URL
       run: echo "The SBOM can be found at $SBOM_SHARE_URL"
       shell: bash
